@@ -61,7 +61,7 @@ export default {
         style="position: fixed; top: 0; left: 0; width:100%; height: 100%; background: rgba(0, 0, 0, 0.7);"
     >
         <div
-            class="flex flex-col justify-center items-center relative  bg-slate-200 rounded" 
+            class="flex flex-col justify-center items-center relative  bg-slate-200 rounded-lg" 
             style="width:100%; max-width: 510px;"
         >
             <div v-if="pokemon" class="w-96">
@@ -123,7 +123,7 @@ export default {
                         </div> 
                     </div>
                     
-                    <div class="pt-4 px-8 pb-8">
+                    <div class="px-8 pb-4">
                        
                         
                     </div>  
@@ -136,7 +136,7 @@ export default {
                     </div> 
                 </div>
             </div>
-            <button class="my-8 px-6 py-2 bg-slate-800 text-white rounded-md" @click="closeDetail"> Close</button>
+            <button class="my-6 px-6 py-2 bg-slate-800 text-white rounded-md" @click="closeDetail"> Close</button>
             
         </div>
         <img v-if="show.length === 0" src="./../../public/icons8-filatore.gif" alt="" class="rounded-full">

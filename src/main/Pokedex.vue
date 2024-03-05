@@ -17,6 +17,7 @@
         PokemonDetails,
     },
     methods: {
+      // Il metodo handleSetPokemonUrl(url) viene chiamato quando un Pokémon viene selezionato nell'elenco dei Pokémon. Riceve l'URL del Pokémon selezionato come parametro e quindi imposta l'URL del Pokémon nel componente PokemonDetails, consentendo al componente di visualizzare i dettagli del Pokémon corrispondente.
       handleSetPokemonUrl(url){
         this.pokemonUrl = url;
         this.showDetail = true;
@@ -33,6 +34,10 @@
 <template>
   <div class="container m-auto flex flex-col justify-center items-center p-3 bg-slate-800 text-xl text-white">
       <h1 class="text-4xl font-bold font-serif">Pokedex</h1>
+      <PokemonSearch 
+        :pokemon="apiUrl"
+        @setPokemonUrl="handleSetPokemonUrl"
+      />
       <PokemonList 
         :imagePokemon="imageUrl" 
         :pokemon="apiUrl"

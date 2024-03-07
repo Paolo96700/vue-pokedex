@@ -8,7 +8,7 @@ export default {
 </script>
 
 <template>
-  <main>
+  <main  class="w-96 m-auto">
     <Pokedex />
   </main>
 </template>

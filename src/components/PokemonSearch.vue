@@ -9,7 +9,7 @@ export default {
         }
     },
     methods: {
-        setPokemonUrl(url) {
+        setPokemonUrl() {
             if(this.searchvalue !== '')
                 this.$emit('setPokemonUrl', this.pokemon + this.searchvalue)
         }
@@ -18,17 +18,21 @@ export default {
 </script>
 
 <template>
-    <div class="my-5 relative">
-        <form @submit.prevent="setPokemonUrl" class="flex  justify-center">
+    <div class="my-5 relative flex justify-center items-center"
+        style="width: 100%;"
+    >
+        <form @submit.prevent="setPokemonUrl" class="flex justify-center items-center"
+        >
             <input  type="text" 
                     v-model="searchvalue"
-                    class="rounded-md w-96 p-1 text-black font-bold text-base"
+                    class="rounded-l-md p-1 text-black font-bold text-base"
+                    style="width: 300px;"
             >
         </form>
         <img src="./../../public/search.png" alt="" 
             @click="setPokemonUrl" 
-            class="absolute right-1 top-1.5"
-            style="height: 20px"
+            class="bg bg-slate-700 p-1 rounded-r-md"
+            style="height: 33px"
         >
     </div>
    

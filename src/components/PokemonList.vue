@@ -35,8 +35,7 @@ export default {
                     });  
                 })
                 .catch(error => {
-                    console.error('Error Pokemon list:', error);
-                    
+                    console.error('Error Pokemon list:', error); 
                 });
         },
         scrollTrigger() {
@@ -53,8 +52,7 @@ export default {
         },
         handlePokemonClick(url){
             this.$emit('setPokemonUrl', url)
-        }
-        
+        } 
     },
     created() {
         this.currentUrl = this.pokemon;

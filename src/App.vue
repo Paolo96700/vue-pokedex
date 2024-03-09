@@ -8,13 +8,13 @@ export default {
 </script>
 
 <template>
-  <main  class="w-96 m-auto">
+  <main>
     <Pokedex />
   </main>
 </template>
 
 
 
-<style>
-
+<style scoped>
+ 
 </style>

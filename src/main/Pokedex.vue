@@ -32,7 +32,7 @@
 </script>
 
 <template>
-  <div class="container m-auto flex flex-col justify-center items-center bg-slate-800 text-xl text-white">
+  <div class="flex flex-col items-center justify-center bg-slate-800 text-xl text-white">
       <h1 class="text-4xl font-bold font-serif pt-5">Pokedex</h1>
       <PokemonSearch 
         :pokemon="apiUrl"
@@ -52,5 +52,5 @@
 </template>
 
 <style lang="scss" scoped>
-    
+  
 </style>

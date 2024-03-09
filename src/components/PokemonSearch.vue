@@ -18,15 +18,14 @@ export default {
 </script>
 
 <template>
-    <div class="my-5 relative flex justify-center items-center"
-        style="width: 100%;"
+    <div class="my-5 relative flex justify-center"
     >
-        <form @submit.prevent="setPokemonUrl" class="flex justify-center items-center"
+        <form @submit.prevent="setPokemonUrl" class=""
         >
             <input  type="text" 
                     v-model="searchvalue"
                     class="rounded-l-md p-1 text-black font-bold text-base"
-                    style="width: 300px;"
+                    style="width: 100%;"
             >
         </form>
         <img src="./../../public/search.png" alt="" 

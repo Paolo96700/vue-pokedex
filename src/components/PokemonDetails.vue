@@ -132,10 +132,10 @@ export default {
             <button class="m-8 px-6 py-2 bg-slate-800 text-white rounded-md" @click="closeDetail">Close</button>  
         </div>
         <div v-else-if="showErrorMessage" class="flex flex-col justify-center items-center px-24 py-3 text-white font-bold" 
-                style="position: fixed; top: 0; left: 0; width:100%; height: 100%; background: rgba(0, 0, 0, 0.7);">
-                <h2  class="font-bold">The Pokemon was not found</h2>
-                <button class="m-8 px-6 py-2 bg-slate-800 text-white rounded-md" @click="closeDetail">Close</button> 
-            </div>
+            style="position: fixed; top: 0; left: 0; width:100%; height: 100%; background: rgba(0, 0, 0, 0.7);">
+            <h2  class="font-bold">The Pokemon was not found</h2>
+            <button class="m-8 px-6 py-2 bg-slate-800 text-white rounded-md" @click="closeDetail">Close</button> 
+        </div>
         <img v-else src="./../../public/icons8-filatore.gif" alt="" class="rounded-full">
     </div>
 </template>

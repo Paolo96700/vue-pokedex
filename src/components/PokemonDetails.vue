@@ -43,7 +43,7 @@ export default {
             this.getPokemonDetails();
             this.interval = setInterval(() => {
                 this.toggleImage();
-            }, 1000);
+            }, 1500);
         }, 500);
     }
       
@@ -52,20 +52,20 @@ export default {
 
 <template>
     <div 
-        class="flex flex-col justify-center items-center px-24 py-3 text-black font-bold" 
+        class="flex flex-col justify-center items-center px-2 md:px-40 xl:px-24 py-3 text-black font-bold" 
         style="position: fixed; top: 0; left: 0; width:100%; height: 100%; background: rgba(0, 0, 0, 0.7);"
     >
         <div
             v-if="show" 
-            class="flex flex-col justify-center items-center relative  bg-slate-200 rounded-lg" 
-            style="width:100%; max-width: 510px;"
+            class="show_container flex flex-col justify-center items-center relative bg-slate-200 rounded-lg"
+            style="width: 50%;" 
         >
-            <div v-if="pokemon" class="w-96 flex flex-col"> 
-                <div class="w-96 flex justify-center py-4">
+            <div v-if="pokemon" class="show_sub_container flex flex-col px-3"> 
+                <div class="flex justify-center py-4">
                     <div 
-                        class="bg-gray-800 flex justify-center rounded-full p-8 w-52" 
-                        style="height: 200px; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 
-                                                          0 10px 10px rgba(0, 0, 0, 0.5);">
+                        class="bg-gray-800 flex justify-center rounded-full p-8" 
+                        style="height: 100%; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 
+                                                         0 10px 10px rgba(0, 0, 0, 0.5);">
                         <img v-if="showFrontImage" :src="image_front" alt="">
                         <img v-else :src="image_back" alt="">
                     </div>
@@ -77,7 +77,7 @@ export default {
                 >
                     {{ pokemon.name }}
                 </div>
-                <div class="pt-8">
+                <div class="pt-2 md:pt-4 xl:pt-4">
                     <div  class="pt-2 flex justify-between border-b-2 border-slate-400 mx-8 text-base">
                         <div class="">Height</div>
                         <div class="flex flex-col items-end text-base">
@@ -118,7 +118,7 @@ export default {
                         </div> 
                     </div>
                      
-                    <div class="pt-4 px-8 pb-8">
+                    <div class="pt-4 px-8 pb-2 md:pb-4 xl:pb-2">
                         <div class="border-b-2 border-slate-400">Pokemon Stats</div>
                         <div v-for="stat in pokemon.stats" :key="stat.id" class="flex justify-between text-base">
                             <div>{{ stat.stat.name }}</div>
@@ -129,7 +129,7 @@ export default {
                 
             </div>
             
-            <button class="m-8 px-6 py-2 bg-slate-800 text-white rounded-md" @click="closeDetail">Close</button>  
+            <button class="m-2 md:m-2 xl:m-6 px-6 py-2 bg-slate-800 text-white rounded-md" @click="closeDetail">Close</button>  
         </div>
         <div v-else-if="showErrorMessage" class="flex flex-col justify-center items-center px-24 py-3 text-white font-bold" 
             style="position: fixed; top: 0; left: 0; width:100%; height: 100%; background: rgba(0, 0, 0, 0.7);">
@@ -140,6 +140,41 @@ export default {
     </div>
 </template>
 
-<style>
+<style lang="scss" scoped>
+    @media (min-width: 2560px) {
+        .show_sub_container{
+            width: 90% !important; 
+        }
+        img{
+            width: 150px;    
+        };
+    }
 
+    @media (min-width: 1440px) {
+        .show_container{
+            width: 40% !important;
+        }
+        .show_sub_container{
+            width: 90% !important;  
+        }
+    }
+
+    
+    @media  (max-width: 1024px) {
+        .show_container{
+            width: 80% !important;
+        }
+        .show_sub_container{
+            width: 100% !important;
+        }
+    }
+
+    @media  (max-width: 768px) {
+        .show_container{
+            width: 100% !important;
+        }
+        .show_sub_container{
+            width: 100% !important;
+        }
+    }
 </style>

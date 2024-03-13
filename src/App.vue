@@ -1,19 +1,27 @@
 <script>
+import Nav from './header/Nav.vue'
 import Pokedex from './main/Pokedex.vue'
 export default {
+  data() {
+    return {
+    }
+  },
   components: {
-       Pokedex,
+      Pokedex, Nav,
     }
 }
 </script>
 
 <template>
+  <header>
+    <Nav />
+  </header>
+
   <main>
-    <Pokedex />
+    <Pokedex 
+    />
   </main>
 </template>
-
-
 
 <style scoped>
  

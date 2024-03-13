@@ -52,7 +52,7 @@ export default {
         },
         handlePokemonClick(url){
             this.$emit('setPokemonUrl', url)
-        } 
+        }, 
     },
     created() {
         this.currentUrl = this.pokemon;
@@ -70,16 +70,23 @@ export default {
  
      
     <div class="flex flex-wrap justify-center items-center gap-1">
-        <div v-for="pokemon in pokemonList" :key="pokemon.id" @click="handlePokemonClick(pokemon.url)" class="card flex flex-col justify-center items-center bg-gray-700 rounded-md p-2" style="width: 120px; height: 140px;  cursor: pointer;">
+        <div 
+            v-for="pokemon in pokemonList" :key="pokemon.id" 
+            @click="handlePokemonClick(pokemon.url)" 
+            class="card flex flex-col justify-center items-center bg-gray-700 rounded-md p-2" 
+            style="width: 120px; height: 140px;  cursor: pointer;"
+        >
             <img :src="pokemon.image" alt="">
             <p class="text-white text-center text-xs font-bold">{{ pokemon.name }}</p>
         </div>
-        <div v-if="pokemonList.length === 0" ref="infinitescrolltrigger" class="scroll-trigger flex justify-center items-center size-8 mx-4 my-2" style="width: 120px; height: 140px;">
+        <div 
+            v-if="pokemonList.length === 0" ref="infinitescrolltrigger" 
+            class="scroll-trigger flex justify-center items-center size-8 mx-4 my-2" 
+            style="width: 120px; height: 140px;"
+        >
             <img src="./../../public/icons8-filatore.gif" alt="" class="rounded-full">
         </div>
     </div>
-        
-
 
 </template>
 
